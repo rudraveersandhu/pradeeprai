@@ -1,3 +1,4 @@
+import HeaderSection from "@/app/components/HeaderSection";
 import HeroSection from "@/app/components/HeroSection";
 import ProfessionalPracticeSection from "@/app/components/ProfessionalPracticeSection";
 import InstitutionalEngagementSection from "@/app/components/InstitutionalEngagementSection";
@@ -10,14 +11,13 @@ import ContactFooterSection from "@/app/components/ContactFooterSection";
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
-      <HeroSection />
-        {/*< ProfessionalPracticeSection/>*/}
-        < InstitutionalEngagementSection/>
+        <HeaderSection />
+        <HeroSection />
+        <InstitutionalEngagementSection/>
         <ChambersSection/>
         <InternshipsSection/>
         <WritingAddressesSection/>
-      <ContactFooterSection/>
-
+        <ContactFooterSection/>
       {/* Add more sections here */}
     </main>
   );

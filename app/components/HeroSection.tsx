@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import HeaderSection from "@/app/components/HeaderSection";
 import ProfessionalPracticeSection from "@/app/components/ProfessionalPracticeSection";
 
 function useInView(threshold = 0.2) {
@@ -37,8 +36,8 @@ const STATS = [
 ];
 
 const TICKER_ITEMS = [
-    "Supreme Court of India", "Senior Advocate", "Est. 2004",
-    "Constitutional Law", "New Delhi", "Corporate Litigation",
+    "Supreme Court of India", "Senior Advocate", "Est. 1999",
+    "Constitutional Law", "Criminal law", "Corporate Litigation",
     "Two Decades of Practice", "Arbitration & Mediation",
 ];
 
@@ -47,8 +46,22 @@ export default function HeroSection() {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        const t = setTimeout(() => setIsLoaded(true), 80);
-        return () => clearTimeout(t);
+        let timeoutId: NodeJS.Timeout;
+        const triggerLoad = () => {
+            timeoutId = setTimeout(() => setIsLoaded(true), 80);
+        };
+
+        if (localStorage.getItem('disclaimerAgreed')) {
+            triggerLoad();
+        } else {
+            const handleAgree = () => triggerLoad();
+            window.addEventListener('disclaimerAgreed', handleAgree);
+            return () => {
+                window.removeEventListener('disclaimerAgreed', handleAgree);
+                clearTimeout(timeoutId);
+            };
+        }
+        return () => clearTimeout(timeoutId);
     }, []);
 
     useEffect(() => {
@@ -92,8 +105,6 @@ export default function HeroSection() {
                 style={{ width: `${scrollProgress * 100}%` }}
             />
 
-            {/* Nav */}
-            <HeaderSection />
             {/* ══════════════════════════════════════
                 HERO — CINEMATIC DARK SPLIT
             ══════════════════════════════════════ */}
@@ -122,7 +133,7 @@ export default function HeroSection() {
                     <div className={`flex items-center gap-[0.9rem] mb-[clamp(2rem,4.5vh,3.5rem)] transition-all duration-700 delay-200 ease-out ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[14px]"}`}>
                         <div className="w-[32px] h-[1px] bg-[#C8102E] shrink-0" />
                         <span className="font-['Libre_Baskerville',serif] text-[0.67rem] tracking-[0.22em] uppercase text-[#C8102E]">
-                            Advocate · Supreme Court of India · Est. 2004
+                             Senior Advocate · Supreme Court of India · Est. 1999
                         </span>
                     </div>
 
@@ -155,16 +166,16 @@ export default function HeroSection() {
                             Senior Advocate
                         </span>
                         <span className="font-['DM_Serif_Display',serif] italic text-[clamp(0.95rem,1.8vw,1.22rem)] text-[#F7F5F0]/45 leading-[1.45] block">
-                            Two decades across constitutional,<br />
-                            corporate &amp; criminal law.
+                            Engaged in constitutional adjudication, regulatory frameworks,<br />
+                            institutional dimensions of governance and more.
                         </span>
                     </div>
 
                     <div className="hidden md:flex gap-[clamp(2rem,4vw,3.5rem)] items-end">
                         {[
-                            { v: "850+", l: "Cases Argued" },
-                            { v: "94%", l: "Success Rate" },
-                            { v: "3", l: "High Courts" },
+                            { v: "30K+", l: "Legal Professionals Mentored" },
+                            { v: "25+", l: "Years of Practice" },
+                            { v: "20+", l: "Domains of law" },
                         ].map((s) => (
                             <div key={s.l}>
                                 <span className="font-['Bebas_Neue',sans-serif] text-[clamp(1.9rem,3.5vw,2.5rem)] leading-none text-[#F7F5F0] block">
