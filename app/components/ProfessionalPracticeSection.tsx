@@ -18,18 +18,19 @@ function useInView(threshold = 0.2) {
     return { ref, inView };
 }
 
-const AREAS = [
-    "Constitutional and public law matters",
-    "Regulatory and governance frameworks",
-    "Commercial and corporate disputes",
-    "Cross-border and multi-jurisdictional issues",
-    "Institutional and administrative law questions",
+const STATS = [
+    { value: "20+", label: "Years of Practice" },
+    { value: "850+", label: "Cases Argued" },
+    { value: "3", label: "High Courts" },
+    { value: "94%", label: "Success Rate" },
 ];
+
 
 export default function ProfessionalPracticeSection() {
     const overviewView = useInView(0.1);
-    const areasView = useInView(0.1);
     const approachView = useInView(0.1);
+    const statsView = useInView(0.15);
+
 
     return (
         <section
@@ -49,21 +50,28 @@ export default function ProfessionalPracticeSection() {
                 </span>
             </div>
 
-            {/* Main Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-[clamp(3rem,6vw,5rem)]">
-
-                {/* Left: Overview */}
-                <div ref={overviewView.ref} className="md:col-span-5 flex flex-col gap-[2rem]">
-                    <h2 className={`font-['DM_Serif_Display',serif] text-[clamp(2.2rem,5vw,3.8rem)] leading-[1.05] text-[#080806] transition-all duration-700 ease-out ${overviewView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[22px]"}`}>
+            {/* Overview — Full Width */}
+            <div
+                ref={overviewView.ref}
+                className="grid grid-cols-1 md:grid-cols-12 gap-[clamp(2rem,5vw,4rem)] items-start"
+            >
+                {/* Label col */}
+                <div className="md:col-span-3">
+                    <h2 className={`font-['DM_Serif_Display',serif] text-[clamp(2.2rem,5vw,3.8rem)] leading-[1.05] text-[#080806] transition-all duration-700 ease-out ${overviewView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[16px]"}`}>
                         Overview
                     </h2>
+                </div>
 
-                    <div className={`space-y-[1.4rem] transition-all duration-700 delay-[120ms] ease-out ${overviewView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[22px]"}`}>
+                {/* Content col */}
+                <div className="md:col-span-9 md:border-l border-[#0c0c0a]/[0.12] md:pl-[clamp(2rem,4vw,4rem)] flex flex-col gap-[2rem]">
+                    <div className={`space-y-[1.4rem] transition-all duration-700 delay-[120ms] ease-out ${overviewView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[16px]"}`}>
                         <p className="font-['Libre_Baskerville',serif] text-[clamp(0.85rem,1.4vw,1rem)] leading-[1.85] text-[#6B6760]">
-                            Dr. Rai was designated as a Senior Advocate in recognition of his standing at the Bar. His practice is primarily before the Supreme Court of India, with appearances across High Courts and tribunals.
+                            Dr. Pradeep Rai is a Designated Senior Advocate practising before the Supreme Court of India and constitutional courts across the country. His work engages constitutional interpretation, statutory construction, regulatory systems, commercial disputes, and institutional governance.</p>
+                        <p className="font-['Libre_Baskerville',serif] text-[clamp(0.85rem,1.4vw,1rem)] leading-[1.85] text-[#6B6760]">
+                            Alongside active litigation, he has been associated with initiatives contributing to legal scholarship, structured research, and public discourse on questions of law and policy.
                         </p>
                         <p className="font-['Libre_Baskerville',serif] text-[clamp(0.85rem,1.4vw,1rem)] leading-[1.85] text-[#6B6760]">
-                            Matters handled frequently involve constitutional principles, regulatory frameworks, statutory interpretation, and governance structures within complex institutional settings.
+                            His professional engagement reflects a sustained interaction with the institutional framework of law in India.
                         </p>
                     </div>
 
@@ -73,36 +81,6 @@ export default function ProfessionalPracticeSection() {
                         <p className="font-['DM_Serif_Display',serif] italic text-[clamp(1rem,1.8vw,1.2rem)] leading-[1.6] text-[#080806]/60">
                             A practice shaped by constitutional discipline, institutional consequence, and the weight of judicial process.
                         </p>
-                    </div>
-                </div>
-
-                {/* Right: Areas of Engagement */}
-                <div ref={areasView.ref} className="md:col-span-7 md:pl-[clamp(2rem,4vw,4rem)] md:border-l border-[#0c0c0a]/[0.12]">
-                    <h3 className={`font-['Libre_Baskerville',serif] text-[0.65rem] tracking-[0.22em] uppercase text-[#6B6760] mb-[2rem] transition-all duration-700 ease-out ${areasView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[16px]"}`}>
-                        Areas of Engagement
-                    </h3>
-
-                    <div className="border-t border-[#0c0c0a]/[0.12]">
-                        {AREAS.map((area, i) => (
-                            <div
-                                key={i}
-                                className={`group flex items-center gap-[clamp(1rem,3vw,2rem)] py-[clamp(1.1rem,2.5vh,1.7rem)] border-b border-[#0c0c0a]/[0.12] cursor-default transition-all duration-500 ease-out hover:bg-[#0c0c0a]/[0.03] ${areasView.inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[18px]"}`}
-                                style={{ transitionDelay: `${i * 80}ms` }}
-                            >
-                                <span className="font-['Bebas_Neue',sans-serif] text-[0.75rem] tracking-[0.06em] text-[#C8102E] shrink-0 w-[2rem]">
-                                    {String(i + 1).padStart(2, "0")}
-                                </span>
-                                <span className="font-['DM_Serif_Display',serif] text-[clamp(1rem,2vw,1.35rem)] text-[#080806] leading-[1.2] flex-1">
-                                    {area}
-                                </span>
-                                <div
-                                    className="hidden md:block w-[24px] h-[1px] bg-[#080806] opacity-20 shrink-0 relative transition-all duration-300 ease-out group-hover:translate-x-[5px] group-hover:opacity-70"
-                                    aria-hidden="true"
-                                >
-                                    <div className="absolute right-0 top-[-3px] w-[6px] h-[6px] border-r border-t border-[#080806] rotate-45" />
-                                </div>
-                            </div>
-                        ))}
                     </div>
                 </div>
             </div>
@@ -159,6 +137,37 @@ export default function ProfessionalPracticeSection() {
                             </div>
                         ))}
                     </div>
+
+                    {/* ══════════════════════════════════════
+                                       STATS
+                    ══════════════════════════════════════ */}
+
+                    <section className="bg-[#F7F5F0] pb-[clamp(9rem,12vh,14rem)] px-[clamp(1.5rem,6vw,5.5rem)] border-b border-[#0c0c0a]/[0.12]">
+                        <div className="flex items-baseline justify-between mb-[clamp(3rem,8vh,6rem)] flex-wrap gap-[1rem]">
+                    <span className="font-['Libre_Baskerville',serif] text-[0.65rem] tracking-[0.22em] uppercase text-[#6B6760]">
+                        By the numbers
+                    </span>
+                            <span className="font-['Bebas_Neue',sans-serif] text-[0.9rem] tracking-[0.1em] text-[#0c0c0a]/20">
+                        01 / 04
+                    </span>
+                        </div>
+                        <div ref={statsView.ref} className="grid grid-cols-2 md:grid-cols-4 border-l border-[#0c0c0a]/[0.12]">
+                            {STATS.map((s, i) => (
+                                <div
+                                    key={s.label}
+                                    className={`p-[clamp(2rem,5vh,3.5rem)_clamp(1.5rem,3vw,2.5rem)] border-r border-t border-[#0c0c0a]/[0.12] transition-all duration-700 ease-out ${statsView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[22px]"}`}
+                                    style={{ transitionDelay: `${i * 100}ms` }}
+                                >
+                            <span className="font-['Bebas_Neue',sans-serif] text-[clamp(3rem,7vw,5.5rem)] leading-none text-[#080806] block mb-[0.45rem]">
+                                {s.value}
+                            </span>
+                                    <span className="font-['Libre_Baskerville',serif] text-[0.7rem] tracking-[0.1em] uppercase text-[#6B6760]">
+                                {s.label}
+                            </span>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
                 </div>
             </div>
         </section>

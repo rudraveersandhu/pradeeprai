@@ -28,12 +28,7 @@ const PRACTICES = [
     { num: "05", title: "IP & Technology", desc: "Intellectual property protection, tech contracts, and emerging digital law." },
 ];
 
-const STATS = [
-    { value: "20+", label: "Years of Practice" },
-    { value: "850+", label: "Cases Argued" },
-    { value: "3", label: "High Courts" },
-    { value: "94%", label: "Success Rate" },
-];
+
 
 const TICKER_ITEMS = [
     "Supreme Court of India", "Senior Advocate", "Est. 1999",
@@ -73,7 +68,7 @@ export default function HeroSection() {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
-    const statsView = useInView(0.15);
+    // const statsView = useInView(0.15);
     const practicesView = useInView(0.05);
     const closingView = useInView(0.2);
 
@@ -222,135 +217,37 @@ export default function HeroSection() {
             {/* ══════════════════════════════════════
                 STATS
             ══════════════════════════════════════ */}
-            <ProfessionalPracticeSection/>
-            <section className="bg-[#F7F5F0] pb-[clamp(9rem,12vh,14rem)] px-[clamp(1.5rem,6vw,5.5rem)] border-b border-[#0c0c0a]/[0.12]">
-                <div className="flex items-baseline justify-between mb-[clamp(3rem,8vh,6rem)] flex-wrap gap-[1rem]">
-                    <span className="font-['Libre_Baskerville',serif] text-[0.65rem] tracking-[0.22em] uppercase text-[#6B6760]">
-                        By the numbers
-                    </span>
-                    <span className="font-['Bebas_Neue',sans-serif] text-[0.9rem] tracking-[0.1em] text-[#0c0c0a]/20">
-                        01 / 04
-                    </span>
-                </div>
-                <div ref={statsView.ref} className="grid grid-cols-2 md:grid-cols-4 border-l border-[#0c0c0a]/[0.12]">
-                    {STATS.map((s, i) => (
-                        <div
-                            key={s.label}
-                            className={`p-[clamp(2rem,5vh,3.5rem)_clamp(1.5rem,3vw,2.5rem)] border-r border-t border-[#0c0c0a]/[0.12] transition-all duration-700 ease-out ${statsView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[22px]"}`}
-                            style={{ transitionDelay: `${i * 100}ms` }}
-                        >
-                            <span className="font-['Bebas_Neue',sans-serif] text-[clamp(3rem,7vw,5.5rem)] leading-none text-[#080806] block mb-[0.45rem]">
-                                {s.value}
-                            </span>
-                            <span className="font-['Libre_Baskerville',serif] text-[0.7rem] tracking-[0.1em] uppercase text-[#6B6760]">
-                                {s.label}
-                            </span>
-                        </div>
-                    ))}
-                </div>
-            </section>
 
-
-
-            {/*/!* ══════════════════════════════════════*/}
-            {/*    PRACTICES*/}
-            {/*══════════════════════════════════════ *!/*/}
-            {/*<section id="practice" className="bg-[#F7F5F0] py-[clamp(5rem,10vh,8rem)] px-[clamp(1.5rem,6vw,5.5rem)] border-b border-[#0c0c0a]/[0.12]">*/}
-            {/*    <div className="grid grid-cols-1 md:grid-cols-2 gap-[2rem] mb-[clamp(3rem,8vh,6rem)] md:items-end">*/}
-            {/*        <h2 className="font-['DM_Serif_Display',serif] text-[clamp(2.2rem,5vw,3.8rem)] leading-[1.1] text-[#080806]">*/}
-            {/*            Areas of<br />*/}
-            {/*            <em className="italic text-[#6B6760]">Practice</em>*/}
-            {/*        </h2>*/}
-            {/*        <p className="font-['Libre_Baskerville',serif] text-[clamp(0.85rem,1.4vw,1rem)] leading-[1.85] text-[#6B6760] max-w-[38ch] md:justify-self-end">*/}
-            {/*            A focused practice built on depth, not breadth. Each matter receives the full weight of two decades of legal experience.*/}
-            {/*        </p>*/}
+            {/*<section className="bg-[#F7F5F0] pb-[clamp(9rem,12vh,14rem)] px-[clamp(1.5rem,6vw,5.5rem)] border-b border-[#0c0c0a]/[0.12]">*/}
+            {/*    <div className="flex items-baseline justify-between mb-[clamp(3rem,8vh,6rem)] flex-wrap gap-[1rem]">*/}
+            {/*        <span className="font-['Libre_Baskerville',serif] text-[0.65rem] tracking-[0.22em] uppercase text-[#6B6760]">*/}
+            {/*            By the numbers*/}
+            {/*        </span>*/}
+            {/*        <span className="font-['Bebas_Neue',sans-serif] text-[0.9rem] tracking-[0.1em] text-[#0c0c0a]/20">*/}
+            {/*            01 / 04*/}
+            {/*        </span>*/}
             {/*    </div>*/}
-
-            {/*    <div ref={practicesView.ref} className="border-t border-[#0c0c0a]/[0.12]">*/}
-            {/*        {PRACTICES.map((p, i) => (*/}
+            {/*    <div ref={statsView.ref} className="grid grid-cols-2 md:grid-cols-4 border-l border-[#0c0c0a]/[0.12]">*/}
+            {/*        {STATS.map((s, i) => (*/}
             {/*            <div*/}
-            {/*                key={p.num}*/}
-            {/*                className={`group grid grid-cols-[2.5rem_1fr] md:grid-cols-[3.5rem_1fr_auto] items-center gap-[clamp(1rem,3vw,2.5rem)] py-[clamp(1.4rem,3.5vh,2.2rem)] border-b border-[#0c0c0a]/[0.12] cursor-default transition-all duration-600 ease-out hover:bg-[#0c0c0a]/5 ${practicesView.inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-[18px]"}`}*/}
-            {/*                style={{ transitionDelay: `${i * 80}ms` }}*/}
+            {/*                key={s.label}*/}
+            {/*                className={`p-[clamp(2rem,5vh,3.5rem)_clamp(1.5rem,3vw,2.5rem)] border-r border-t border-[#0c0c0a]/[0.12] transition-all duration-700 ease-out ${statsView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[22px]"}`}*/}
+            {/*                style={{ transitionDelay: `${i * 100}ms` }}*/}
             {/*            >*/}
-            {/*                <span className="font-['Bebas_Neue',sans-serif] text-[0.82rem] tracking-[0.06em] text-[#C8102E]">*/}
-            {/*                    {p.num}*/}
+            {/*                <span className="font-['Bebas_Neue',sans-serif] text-[clamp(3rem,7vw,5.5rem)] leading-none text-[#080806] block mb-[0.45rem]">*/}
+            {/*                    {s.value}*/}
             {/*                </span>*/}
-            {/*                <div>*/}
-            {/*                    <span className="font-['DM_Serif_Display',serif] text-[clamp(1.2rem,2.8vw,1.9rem)] text-[#080806] leading-[1.1]">*/}
-            {/*                        {p.title}*/}
-            {/*                    </span>*/}
-            {/*                    <span className="font-['Libre_Baskerville',serif] text-[clamp(0.77rem,1.1vw,0.87rem)] text-[#6B6760] leading-[1.65] max-w-[55ch] block mt-[0.25rem]">*/}
-            {/*                        {p.desc}*/}
-            {/*                    </span>*/}
-            {/*                </div>*/}
-
-            {/*                /!* Converted ::after pseudo-elements into purely Tailwind border-based shapes *!/*/}
-            {/*                <div className="hidden md:block w-[30px] h-[1px] bg-[#080806] opacity-20 shrink-0 relative transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-[6px] group-hover:opacity-80" aria-hidden="true">*/}
-            {/*                    <div className="absolute right-0 top-[-3px] w-[7px] h-[7px] border-r border-t border-[#080806] rotate-45" />*/}
-            {/*                </div>*/}
+            {/*                <span className="font-['Libre_Baskerville',serif] text-[0.7rem] tracking-[0.1em] uppercase text-[#6B6760]">*/}
+            {/*                    {s.label}*/}
+            {/*                </span>*/}
             {/*            </div>*/}
             {/*        ))}*/}
             {/*    </div>*/}
             {/*</section>*/}
 
-            {/*/!* ══════════════════════════════════════*/}
-            {/*    CLOSING CTA*/}
-            {/*══════════════════════════════════════ *!/*/}
-            {/*<section*/}
-            {/*    id="contact"*/}
-            {/*    ref={closingView.ref}*/}
-            {/*    className="bg-[#080806] text-[#F7F5F0] min-h-[80vh] relative overflow-hidden py-[clamp(5rem,10vh,9rem)] px-[clamp(1.5rem,6vw,5.5rem)] flex flex-col justify-center"*/}
-            {/*>*/}
-            {/*    /!* Background decorative letter *!/*/}
-            {/*    <div aria-hidden="true" className="absolute right-[-4vw] bottom-[-8vh] font-['Bebas_Neue',sans-serif] text-[clamp(14rem,32vw,30rem)] text-transparent [-webkit-text-stroke:1px_rgba(247,245,240,0.04)] pointer-events-none select-none leading-none">*/}
-            {/*        R*/}
-            {/*    </div>*/}
 
-            {/*    <p className={`font-['Libre_Baskerville',serif] text-[0.65rem] tracking-[0.22em] uppercase text-[#C8102E] mb-[1.8rem] transition-all duration-700 delay-100 ease-out ${closingView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[16px]"}`}>*/}
-            {/*        Get in Touch*/}
-            {/*    </p>*/}
-            {/*    <h2 className={`font-['Bebas_Neue',sans-serif] text-[clamp(3.5rem,12vw,10rem)] leading-[0.9] tracking-[0.02em] text-[#F7F5F0] mb-[clamp(2rem,5vh,4rem)] max-w-[14ch] transition-all duration-700 delay-[220ms] ease-out ${closingView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[16px]"}`}>*/}
-            {/*        Let's Discuss Your Matter*/}
-            {/*    </h2>*/}
 
-            {/*    <div className={`flex flex-col gap-[1rem] mb-[clamp(2.5rem,6vh,4rem)] transition-all duration-700 delay-[380ms] ease-out ${closingView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[16px]"}`}>*/}
-            {/*        {[*/}
-            {/*            { type: "Phone", value: "+91 98100 00000", href: "tel:+919810000000" },*/}
-            {/*            { type: "Email", value: "contact@pradeeprai.in", href: "mailto:contact@pradeeprai.in" },*/}
-            {/*            { type: "Office", value: "Supreme Court Chambers, New Delhi", href: undefined },*/}
-            {/*        ].map((c) => (*/}
-            {/*            <a key={c.type} href={c.href} className="group flex items-center gap-[1.2rem] no-underline">*/}
-            {/*                <span className="font-['Libre_Baskerville',serif] text-[0.62rem] tracking-[0.18em] uppercase text-[#F7F5F0]/30 w-[4rem] shrink-0">*/}
-            {/*                    {c.type}*/}
-            {/*                </span>*/}
-            {/*                <span className="font-['DM_Serif_Display',serif] italic text-[clamp(0.95rem,1.8vw,1.18rem)] text-[#F7F5F0]/72 transition-colors duration-200 group-hover:text-[#F7F5F0]">*/}
-            {/*                    {c.value}*/}
-            {/*                </span>*/}
-            {/*            </a>*/}
-            {/*        ))}*/}
-            {/*    </div>*/}
 
-            {/*    <a*/}
-            {/*        href="mailto:contact@pradeeprai.in"*/}
-            {/*        className={`group inline-flex items-center gap-[1.2rem] bg-[#F7F5F0] text-[#080806] font-['Libre_Baskerville',serif] text-[0.72rem] tracking-[0.14em] uppercase py-[1rem] px-[2rem] no-underline self-start transition-all duration-300 hover:bg-[#C8102E] hover:text-[#F7F5F0] delay-[520ms] ease-out ${closingView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[16px]"}`}*/}
-            {/*    >*/}
-            {/*        Send an Enquiry*/}
-            {/*        <span className="relative shrink-0 w-[28px] h-[1px] bg-current inline-block" aria-hidden="true">*/}
-            {/*            <span className="absolute right-0 top-[-3px] w-[7px] h-[7px] border-r border-t border-current rotate-45" />*/}
-            {/*        </span>*/}
-            {/*    </a>*/}
-            {/*</section>*/}
-
-            {/* Footer */}
-            {/*<footer className="bg-[#080806] border-t border-[#F7F5F0]/10 py-[1.5rem] px-[clamp(1.5rem,6vw,5.5rem)] flex justify-between items-center flex-wrap gap-[1rem]">*/}
-            {/*    <span className="font-['Bebas_Neue',sans-serif] text-[1rem] tracking-[0.14em] text-[#F7F5F0]/30">*/}
-            {/*        PRADEEP RAI*/}
-            {/*    </span>*/}
-            {/*    <span className="font-['Libre_Baskerville',serif] text-[0.65rem] tracking-[0.1em] text-[#F7F5F0]/20">*/}
-            {/*        © 2025 · Advocate, Supreme Court of India · All Rights Reserved*/}
-            {/*    </span>*/}
-            {/*</footer>*/}
         </div>
     );
 }
