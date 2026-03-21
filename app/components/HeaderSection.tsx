@@ -172,7 +172,7 @@ export default function HeaderSection() {
                       lineHeight: 1,
                   }}
               >
-                PRADEEP RAI
+                DR. PRADEEP RAI
               </span>
                             <span
                                 style={{
@@ -254,7 +254,7 @@ export default function HeaderSection() {
                                     parent.addEventListener("mouseleave", () => { el.style.transform = "scaleX(0)"; });
                                 }}
                             />
-                            <span className="relative">Brief Me</span>
+                            <span className="relative">Get in Touch</span>
                             <span className="relative shrink-0 w-[20px] h-[1px] bg-current inline-block" aria-hidden="true">
                 <span className="absolute right-0 top-[-3px] w-[6px] h-[6px] border-r border-t border-current rotate-45" />
               </span>

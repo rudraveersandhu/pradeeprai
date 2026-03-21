@@ -19,9 +19,9 @@ function useInView(threshold = 0.2) {
 }
 
 const STATS = [
-    { value: "20+", label: "Years of Practice" },
-    { value: "850+", label: "Cases Argued" },
-    { value: "3", label: "High Courts" },
+    { value: "30K+", label: "Legal Professionals Mentored" },
+    { value: "25+", label: "Years of Practice" },
+    { value: "20+", label: "Domains of law" },
     { value: "94%", label: "Success Rate" },
 ];
 
@@ -142,33 +142,35 @@ export default function ProfessionalPracticeSection() {
                                        STATS
                     ══════════════════════════════════════ */}
 
-                    <section className="bg-[#F7F5F0] pb-[clamp(9rem,12vh,14rem)] px-[clamp(1.5rem,6vw,5.5rem)] border-b border-[#0c0c0a]/[0.12]">
-                        <div className="flex items-baseline justify-between mb-[clamp(3rem,8vh,6rem)] flex-wrap gap-[1rem]">
-                    <span className="font-['Libre_Baskerville',serif] text-[0.65rem] tracking-[0.22em] uppercase text-[#6B6760]">
-                        By the numbers
-                    </span>
-                            <span className="font-['Bebas_Neue',sans-serif] text-[0.9rem] tracking-[0.1em] text-[#0c0c0a]/20">
-                        01 / 04
-                    </span>
-                        </div>
-                        <div ref={statsView.ref} className="grid grid-cols-2 md:grid-cols-4 border-l border-[#0c0c0a]/[0.12]">
-                            {STATS.map((s, i) => (
+                    <div className={`mt-[3rem] grid grid-cols-2 md:grid-cols-4 border-t border-[#0c0c0a]/[0.10] transition-all duration-700 delay-[280ms] ease-out ${statsView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[22px]"}`}>
+                        {STATS.map((s, i) => {
+                            const [num, suffix] = s.value.match(/^(\d+)([+%]?)$/)?.slice(1) ?? [s.value, ""];
+                            return (
                                 <div
                                     key={s.label}
-                                    className={`p-[clamp(2rem,5vh,3.5rem)_clamp(1.5rem,3vw,2.5rem)] border-r border-t border-[#0c0c0a]/[0.12] transition-all duration-700 ease-out ${statsView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[22px]"}`}
+                                    className={`py-[3.5rem] border-r border-[#0c0c0a]/[0.10] last:border-r-0 flex flex-col gap-[0.75rem] transition-all duration-700 ease-out ${i === 0 ? "pr-[2.5rem]" : "px-[2.5rem]"} ${statsView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[22px]"}`}
                                     style={{ transitionDelay: `${i * 100}ms` }}
                                 >
-                            <span className="font-['Bebas_Neue',sans-serif] text-[clamp(3rem,7vw,5.5rem)] leading-none text-[#080806] block mb-[0.45rem]">
-                                {s.value}
-                            </span>
-                                    <span className="font-['Libre_Baskerville',serif] text-[0.7rem] tracking-[0.1em] uppercase text-[#6B6760]">
-                                {s.label}
-                            </span>
+                                    <div className="flex items-start gap-[3px]">
+          <span className="font-['Bebas_Neue',sans-serif] text-[clamp(3.5rem,7vw,5rem)] leading-none text-[#080806]">
+            {num}
+          </span>
+                                        {suffix && (
+                                            <span className="font-['Bebas_Neue',sans-serif] text-[clamp(1.5rem,3vw,2.2rem)] leading-none text-[#C8102E] mt-[0.4rem]">
+              {suffix}
+            </span>
+                                        )}
+                                    </div>
+                                    <div className="w-[20px] h-[1px] bg-[#C8102E]" />
+                                    <span className="font-['Libre_Baskerville',serif] text-[0.65rem] tracking-[0.18em] uppercase text-[#6B6760] leading-[1.7]">
+          {s.label.replace(" ", "\n")}
+        </span>
                                 </div>
-                            ))}
-                        </div>
-                    </section>
-                </div>
+                            );
+                        })}
+                    </div>
+
+                     </div>
             </div>
         </section>
     );

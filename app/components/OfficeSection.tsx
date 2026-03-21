@@ -31,14 +31,14 @@ const WORK_AREAS = [
     "Preparation for Oral Advocacy",
 ];
 
-export default function ChambersSection() {
+export default function OfficeSection() {
     const headView = useInView(0.1);
     const bodyView = useInView(0.08);
     const foundView = useInView(0.1);
 
     return (
         <section
-            id="chambers"
+            id="office"
             className="bg-[#F7F5F0] py-[clamp(5rem,12vh,10rem)] px-[clamp(1.5rem,6vw,5.5rem)] border-b border-[#0c0c0a]/[0.12] overflow-hidden relative"
         >
             {/* Faint background word */}
@@ -46,7 +46,7 @@ export default function ChambersSection() {
                 aria-hidden="true"
                 className="absolute right-[-2vw] top-[50%] -translate-y-1/2 font-['Bebas_Neue',sans-serif] text-[clamp(10rem,24vw,22rem)] leading-none text-transparent [-webkit-text-stroke:1px_rgba(12,12,10,0.04)] select-none pointer-events-none"
             >
-                CHAMBERS
+                OFFICE
             </div>
 
             {/* Section Header */}
@@ -54,7 +54,7 @@ export default function ChambersSection() {
                 <div className="flex items-center gap-[0.9rem]">
                     <div className="w-[32px] h-[1px] bg-[#C8102E] shrink-0" />
                     <span className="font-['Libre_Baskerville',serif] text-[0.65rem] tracking-[0.22em] uppercase text-[#6B6760]">
-                        Chambers
+                        OFFICE
                     </span>
                 </div>
                 <span className="font-['Bebas_Neue',sans-serif] text-[0.9rem] tracking-[0.1em] text-[#0c0c0a]/20">
@@ -77,10 +77,10 @@ export default function ChambersSection() {
                 {/* Left: paragraphs */}
                 <div className="md:col-span-6 flex flex-col gap-[1.8rem]">
                     <p className={`font-['DM_Serif_Display',serif] italic text-[clamp(1.1rem,2.2vw,1.5rem)] leading-[1.65] text-[#080806] transition-all duration-700 ease-out ${bodyView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[20px]"}`}>
-                        The chambers of Dr. Pradeep Rai function as an active litigation practice before the Supreme Court of India and other constitutional courts.
+                        The office of Dr. Pradeep Rai function as an active litigation practice before the Supreme Court of India.
                     </p>
                     <p className={`font-['Libre_Baskerville',serif] text-[clamp(0.85rem,1.4vw,1rem)] leading-[1.85] text-[#6B6760] transition-all duration-700 delay-[120ms] ease-out ${bodyView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[20px]"}`}>
-                        Work within the chambers is organised around constitutional analysis, statutory interpretation, regulatory frameworks, and preparation for oral advocacy.
+                        Work within the office is organised around constitutional analysis, statutory interpretation, regulatory frameworks, and preparation for oral advocacy.
                     </p>
                     <p className={`font-['Libre_Baskerville',serif] text-[clamp(0.85rem,1.4vw,1rem)] leading-[1.85] text-[#6B6760] transition-all duration-700 delay-[220ms] ease-out ${bodyView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[20px]"}`}>
                         Professional discipline, procedural integrity, and structured reasoning form the foundation of the practice.

@@ -19,7 +19,7 @@ function useInView(threshold = 0.2) {
 }
 
 const CONTACT_FIELDS = [
-    { label: "Address", value: "[Chambers Address]", href: undefined },
+    { label: "Address", value: "[Office Address]", href: undefined },
     { label: "Email", value: "[Email Address]", href: "mailto:" },
     { label: "Phone", value: "[Office Contact Number]", href: "tel:" },
 ];
@@ -35,7 +35,7 @@ export default function ContactFooterSection() {
                 CONTACT
             ══════════════════════════════════════ */}
             <section
-                id="contact-chambers"
+                id="contact-office"
                 className="bg-[#080806] py-[clamp(5rem,12vh,10rem)] px-[clamp(1.5rem,6vw,5.5rem)] border-b border-[#F7F5F0]/[0.08] overflow-hidden relative"
             >
                 {/* Ghost background word */}
@@ -63,7 +63,7 @@ export default function ContactFooterSection() {
                     <div ref={headView.ref} className="md:col-span-5 flex flex-col justify-between gap-[3rem]">
                         <div>
                             <p className={`font-['Libre_Baskerville',serif] text-[0.65rem] tracking-[0.22em] uppercase text-[#F7F5F0]/30 mb-[1.2rem] transition-all duration-700 ease-out ${headView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[16px]"}`}>
-                                Chambers of
+                                Office of
                             </p>
                             <h2 className={`font-['Bebas_Neue',sans-serif] text-[clamp(3rem,9vw,7.5rem)] leading-[0.88] tracking-[0.02em] text-[#F7F5F0] transition-all duration-[1000ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${headView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[30px]"}`}>
                                 Dr.<br />Pradeep<br />Rai
@@ -71,7 +71,7 @@ export default function ContactFooterSection() {
                             <div className={`mt-[1.4rem] flex items-center gap-[0.8rem] transition-all duration-700 delay-[250ms] ease-out ${headView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[14px]"}`}>
                                 <div className="w-[2px] h-[2.2rem] bg-[#C8102E] shrink-0" />
                                 <span className="font-['DM_Serif_Display',serif] italic text-[clamp(0.9rem,1.6vw,1.1rem)] text-[#F7F5F0]/45 leading-[1.4]">
-                                    Designated Senior Advocate<br />Supreme Court of India
+                                    Senior Advocate<br />Supreme Court of India
                                 </span>
                             </div>
                         </div>
@@ -134,7 +134,7 @@ export default function ContactFooterSection() {
                             Pradeep Rai
                         </span>
                         <span className="font-['DM_Serif_Display',serif] italic text-[0.8rem] text-[#F7F5F0]/30 block leading-[1.5]">
-                            Designated Senior Advocate<br />Supreme Court of India
+                            Senior Advocate<br />Supreme Court of India
                         </span>
                     </div>
 
@@ -155,7 +155,7 @@ export default function ContactFooterSection() {
                         © {new Date().getFullYear()} · Advocate, Supreme Court of India · All Rights Reserved
                     </span>
                     <div className="flex items-center gap-[1.4rem]">
-                        {["About", "Practice", "Chambers", "Internships", "Contact"].map((link, i) => (
+                        {["About", "Practice", "Offices", "Internships", "Contact"].map((link, i) => (
                             <a
                                 key={link}
                                 href={`#${link.toLowerCase()}`}

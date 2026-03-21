@@ -32,7 +32,7 @@ const SELECTION_CRITERIA = [
     { label: "Writing Ability", id: "03" },
 ];
 
-export default function InternshipsSection() {
+export default function MentorshipSection() {
     const headView = useInView(0.1);
     const workView = useInView(0.05);
     const frameworkView = useInView(0.1);
@@ -40,7 +40,7 @@ export default function InternshipsSection() {
 
     return (
         <section
-            id="internships"
+            id="mentorship"
             className="bg-[#080806] py-[clamp(5rem,12vh,10rem)] px-[clamp(1.5rem,6vw,5.5rem)] border-b border-[#F7F5F0]/[0.08] overflow-hidden relative"
         >
             {/* Ghost background letter */}
@@ -56,7 +56,7 @@ export default function InternshipsSection() {
                 <div className="flex items-center gap-[0.9rem]">
                     <div className="w-[32px] h-[1px] bg-[#C8102E] shrink-0" />
                     <span className="font-['Libre_Baskerville',serif] text-[0.65rem] tracking-[0.22em] uppercase text-[#F7F5F0]/40">
-                        Internships
+                        Mentorship
                     </span>
                 </div>
             </div>
@@ -65,16 +65,16 @@ export default function InternshipsSection() {
             <div ref={headView.ref} className="grid grid-cols-1 md:grid-cols-12 gap-[clamp(3rem,6vw,5rem)] mb-[clamp(5rem,12vh,9rem)] pb-[clamp(5rem,12vh,9rem)] border-b border-[#F7F5F0]/[0.08]">
                 <div className="md:col-span-5">
                     <h2 className={`font-['Bebas_Neue',sans-serif] text-[clamp(3.5rem,10vw,8.5rem)] leading-[0.88] tracking-[0.02em] text-[#F7F5F0] transition-all duration-[1000ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${headView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[30px]"}`}>
-                        INTERN<br />
-                        <span className="text-[#C8102E]">—</span>SHIPS
+                        Mentor<br />
+                        <span className="text-[#C8102E]">—</span>SHIP
                     </h2>
                 </div>
                 <div className="md:col-span-7 md:border-l border-[#F7F5F0]/[0.08] md:pl-[clamp(2rem,4vw,4rem)] flex flex-col gap-[1.4rem] justify-center">
                     <p className={`font-['DM_Serif_Display',serif] italic text-[clamp(1rem,2vw,1.35rem)] leading-[1.7] text-[#F7F5F0]/80 transition-all duration-700 delay-[100ms] ease-out ${headView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[18px]"}`}>
-                        The chambers host structured internship programmes for law students seeking exposure to constitutional and higher court litigation.
+                        Rai hosts structured mentorship programmes for law students and legal professionals seeking exposure to constitutional and higher court litigation.
                     </p>
                     <p className={`font-['Libre_Baskerville',serif] text-[clamp(0.82rem,1.3vw,0.95rem)] leading-[1.85] text-[#F7F5F0]/40 transition-all duration-700 delay-[200ms] ease-out ${headView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[18px]"}`}>
-                        Internships are designed to provide disciplined engagement with live matters, research methodology, drafting processes, and courtroom preparation.
+                        The Mentorship is designed to provide disciplined engagement with live matters, research methodology, drafting processes, and courtroom preparation.
                     </p>
                 </div>
             </div>
@@ -104,7 +104,7 @@ export default function InternshipsSection() {
                         ))}
                     </div>
                     <p className={`mt-[1.8rem] font-['Libre_Baskerville',serif] italic text-[0.78rem] leading-[1.7] text-[#F7F5F0]/25 transition-all duration-700 delay-[500ms] ease-out ${workView.inView ? "opacity-100" : "opacity-0"}`}>
-                        Assignments are determined by the nature of ongoing matters and the requirements of the chambers.
+                        Assignments are determined by the nature of ongoing matters and the requirements of the Office.
                     </p>
                 </div>
 
@@ -115,7 +115,7 @@ export default function InternshipsSection() {
                     </span>
 
                     <p className={`font-['DM_Serif_Display',serif] italic text-[clamp(1rem,2vw,1.3rem)] leading-[1.65] text-[#F7F5F0]/75 transition-all duration-700 delay-[100ms] ease-out ${frameworkView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[18px]"}`}>
-                        Internships are conducted within a structured professional environment.
+                        The Mentorship is conducted within a structured professional environment.
                     </p>
 
                     <p className={`font-['Libre_Baskerville',serif] text-[clamp(0.82rem,1.3vw,0.95rem)] leading-[1.85] text-[#F7F5F0]/40 transition-all duration-700 delay-[180ms] ease-out ${frameworkView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[18px]"}`}>
@@ -157,10 +157,14 @@ export default function InternshipsSection() {
                     {/* Left: duration text */}
                     <div className="px-[clamp(1.5rem,3vw,2.5rem)] py-[clamp(2rem,5vh,3.5rem)]">
                         <p className="font-['Libre_Baskerville',serif] text-[clamp(0.82rem,1.3vw,0.95rem)] leading-[1.85] text-[#F7F5F0]/45 mb-[1.2rem]">
-                            Internship duration and intake cycles are determined by the requirements of the chambers.
+                            Mentorship duration and intake cycles are determined by the requirements of the office.
+                        </p>
+
+                        <p className="font-['Libre_Baskerville',serif] text-[clamp(0.82rem,1.3vw,0.95rem)] leading-[1.85] text-[#F7F5F0]/45">
+                            For mentorship-related correspondence, applications may be directed to the following form with appropriate academic details and writing samples.
                         </p>
                         <p className="font-['Libre_Baskerville',serif] text-[clamp(0.82rem,1.3vw,0.95rem)] leading-[1.85] text-[#F7F5F0]/45">
-                            Applications may be submitted through the contact details provided below.
+                            Applications may be submitted through this google form : https://forms.gle/ydNaSBS9YGYqCpf78
                         </p>
                     </div>
 

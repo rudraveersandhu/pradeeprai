@@ -21,9 +21,9 @@ function useInView(threshold = 0.2) {
 const INITIATIVES = [
     {
         id: "01",
-        title: "India Legal",
-        subtitle: "Platform for Legal Commentary",
-        body: "India Legal serves as a platform for documentation and commentary on developments in law and governance. It provides space for contributions from members of the judiciary, legal practitioners, and scholars.",
+        title: "India Legal Aid Centre",
+        subtitle: "Platform for Legal Aid",
+        body: "India Legal Aid Centre serves as a platform to provide pro bono legal advice to those in need . It provides space for contributions from the mentees, associates and legal practitioners.",
         tag: "Documentation & Commentary",
     },
     {
@@ -42,7 +42,7 @@ const INITIATIVES = [
     },
 ];
 
-const PILLARS = ["The Bar", "The Bench", "Academia", "Policy Institutions"];
+const PILLARS = ["The Bar", "Academia", "Policy Institutions", "Judicial Process"];
 
 export default function InstitutionalEngagementSection() {
     const overviewView = useInView(0.1);
