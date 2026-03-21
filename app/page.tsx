@@ -15,7 +15,6 @@ export default function Home() {
         <HeaderSection />
         <HeroSection />
         <ProfessionalPracticeSection/>
-
         <InstitutionalEngagementSection/>
         <OfficeSection/>
         <InternshipsSection/>

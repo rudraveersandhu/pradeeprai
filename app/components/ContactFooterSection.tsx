@@ -35,7 +35,7 @@ export default function ContactFooterSection() {
                 CONTACT
             ══════════════════════════════════════ */}
             <section
-                id="contact-office"
+                id="contact"
                 className="bg-[#080806] py-[clamp(5rem,12vh,10rem)] px-[clamp(1.5rem,6vw,5.5rem)] border-b border-[#F7F5F0]/[0.08] overflow-hidden relative"
             >
                 {/* Ghost background word */}
