@@ -155,13 +155,18 @@ export default function ContactFooterSection() {
                         © {new Date().getFullYear()} · Advocate, Supreme Court of India · All Rights Reserved
                     </span>
                     <div className="flex items-center gap-[1.4rem]">
-                        {["About", "Practice", "Offices", "Internships", "Contact"].map((link, i) => (
+                        {[
+                            { label: "Home", href: "#about" },
+                            { label: "Mentorship", href: "#mentorship" },
+                            { label: "Gallery", href: "#gallery" },
+                            { label: "Contact", href: "#contact" }
+                        ].map((link, i) => (
                             <a
-                                key={link}
-                                href={`#${link.toLowerCase()}`}
+                                key={link.label}
+                                href={link.href}
                                 className="font-['Libre_Baskerville',serif] text-[0.58rem] tracking-[0.12em] uppercase text-[#F7F5F0]/20 hover:text-[#F7F5F0]/50 transition-colors duration-200 no-underline"
                             >
-                                {link}
+                                {link.label}
                             </a>
                         ))}
                     </div>
