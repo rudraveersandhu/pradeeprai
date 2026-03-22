@@ -106,9 +106,9 @@ export default function HeroSection() {
             <section className="relative bg-[#080806] min-h-screen overflow-hidden flex flex-col" id="about">
 
                 {/* Photo Overlay logic (Gradients converted to standard absolute divs) */}
-                <div className="absolute right-0 top-0 bottom-0 w-full md:w-[clamp(320px,52%,780px)] pointer-events-none z-[1]">
+                <div className="absolute inset-0 w-full h-full pointer-events-none z-[1]">
                     <Image
-                        src="/pradeep_rai.png"
+                        src="/prbf.jpg"
                         alt="Pradeep Rai, Senior Advocate"
                         fill
                         className={`object-cover object-top transition-all duration-[1500ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-105"

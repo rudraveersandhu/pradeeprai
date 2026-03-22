@@ -18,15 +18,67 @@ function useInView(threshold = 0.2) {
     return { ref, inView };
 }
 
-const CONTACT_FIELDS = [
-    { label: "Address", value: "[Office Address]", href: undefined },
-    { label: "Email", value: "[Email Address]", href: "mailto:" },
-    { label: "Phone", value: "[Office Contact Number]", href: "tel:" },
+const OFFICES = [
+    {
+        city: "Delhi",
+        pincode: "110001",
+        lines: ["2-C/D, White House", "10 Bhagwan Das Road"],
+    },
+    {
+        city: "Noida",
+        pincode: "201301",
+        lines: ["A-9, Sector 68"],
+    },
+    {
+        city: "Mumbai",
+        pincode: "400061",
+        lines: [
+            "Sr. Adv. Pradeep Kumar Rai",
+            "B-003/004 Arshie Complex",
+            "Off Yari Road, Panchmarg",
+            "Varsova, Andheri West",
+        ],
+    },
+];
+
+const REACH = [
+    {
+        label: "Email",
+        icon: (
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+        ),
+        value: "office@pradeeprai.com",
+        href: "mailto:office@pradeeprai.com",
+    },
+    {
+        label: "Phone I",
+        icon: (
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 5.67 5.67l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+        ),
+        value: "011 2338 998",
+        href: "tel:0112338998",
+    },
+    {
+        label: "Phone II",
+        icon: (
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.55 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 5.67 5.67l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+        ),
+        value: "011 2338 9505",
+        href: "tel:23389505",
+    },
 ];
 
 export default function ContactFooterSection() {
     const headView = useInView(0.1);
-    const detailsView = useInView(0.08);
+    const officesView = useInView(0.06);
+    const reachView = useInView(0.08);
     const noticeView = useInView(0.1);
 
     return (
@@ -56,8 +108,8 @@ export default function ContactFooterSection() {
                     </div>
                 </div>
 
-                {/* Main grid */}
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-[clamp(3rem,7vw,6rem)]">
+                {/* ── TOP ROW: Name block + Reach (email & phones) ── */}
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-[clamp(3rem,7vw,6rem)] mb-[clamp(3.5rem,8vh,6rem)]">
 
                     {/* Left: heading block */}
                     <div ref={headView.ref} className="md:col-span-5 flex flex-col justify-between gap-[3rem]">
@@ -84,38 +136,94 @@ export default function ContactFooterSection() {
                         </div>
                     </div>
 
-                    {/* Right: contact fields */}
-                    <div ref={detailsView.ref} className="md:col-span-7 md:border-l border-[#F7F5F0]/[0.08] md:pl-[clamp(2.5rem,5vw,5rem)] flex flex-col justify-center">
+                    {/* Right: Email + Phones */}
+                    <div ref={reachView.ref} className="md:col-span-7 md:border-l border-[#F7F5F0]/[0.08] md:pl-[clamp(2.5rem,5vw,5rem)] flex flex-col justify-center">
+                        <p className={`font-['Libre_Baskerville',serif] text-[0.6rem] tracking-[0.2em] uppercase text-[#F7F5F0]/25 mb-[1.6rem] transition-all duration-700 ease-out ${reachView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[12px]"}`}>
+                            Get in Touch
+                        </p>
                         <div className="border-t border-[#F7F5F0]/[0.08]">
-                            {CONTACT_FIELDS.map((field, i) => (
+                            {REACH.map((item, i) => (
                                 <div
-                                    key={field.label}
-                                    className={`group grid grid-cols-[5rem_1fr] items-start gap-[1.5rem] py-[clamp(1.4rem,3.5vh,2.2rem)] border-b border-[#F7F5F0]/[0.08] transition-all duration-600 ease-out ${detailsView.inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[18px]"}`}
+                                    key={item.label}
+                                    className={`group grid grid-cols-[5.5rem_1fr] items-center gap-[1.5rem] py-[clamp(1.2rem,3vh,1.8rem)] border-b border-[#F7F5F0]/[0.08] transition-all duration-600 ease-out ${reachView.inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[18px]"}`}
                                     style={{ transitionDelay: `${i * 110}ms` }}
                                 >
-                                    <span className="font-['Libre_Baskerville',serif] text-[0.6rem] tracking-[0.18em] uppercase text-[#F7F5F0]/25 mt-[0.35rem]">
-                                        {field.label}
-                                    </span>
-                                    {field.href !== undefined ? (
-                                        <a
-                                            href={field.href}
-                                            className="font-['DM_Serif_Display',serif] italic text-[clamp(1rem,2vw,1.35rem)] text-[#F7F5F0]/55 hover:text-[#F7F5F0] transition-colors duration-200 no-underline leading-[1.4]"
-                                        >
-                                            {field.value}
-                                        </a>
-                                    ) : (
-                                        <span className="font-['DM_Serif_Display',serif] italic text-[clamp(1rem,2vw,1.35rem)] text-[#F7F5F0]/55 leading-[1.4]">
-                                            {field.value}
+                                    <div className="flex items-center gap-[0.55rem]">
+                                        <span className="text-[#C8102E]/60 group-hover:text-[#C8102E] transition-colors duration-200">
+                                            {item.icon}
                                         </span>
-                                    )}
+                                        <span className="font-['Libre_Baskerville',serif] text-[0.58rem] tracking-[0.16em] uppercase text-[#F7F5F0]/22">
+                                            {item.label}
+                                        </span>
+                                    </div>
+                                    <a
+                                        href={item.href}
+                                        className="font-['DM_Serif_Display',serif] italic text-[clamp(1rem,2vw,1.3rem)] text-[#F7F5F0]/55 hover:text-[#F7F5F0] transition-colors duration-200 no-underline leading-[1.4] break-all"
+                                    >
+                                        {item.value}
+                                    </a>
                                 </div>
                             ))}
                         </div>
-
-                        {/* Professional regulations notice */}
-                        <p className={`mt-[2rem] font-['Libre_Baskerville',serif] text-[0.72rem] leading-[1.75] text-[#F7F5F0]/20 transition-all duration-700 delay-[400ms] ease-out ${detailsView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[10px]"}`}>
+                        <p className={`mt-[1.6rem] font-['Libre_Baskerville',serif] text-[0.7rem] leading-[1.75] text-[#F7F5F0]/20 transition-all duration-700 delay-[400ms] ease-out ${reachView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[10px]"}`}>
                             All communications are subject to applicable professional regulations governing advocates in India.
                         </p>
+                    </div>
+                </div>
+
+                {/* ── BOTTOM ROW: Three Office Addresses ── */}
+                <div ref={officesView.ref}>
+                    {/* Divider with label */}
+                    <div className={`flex items-center gap-[1.2rem] mb-[clamp(2rem,5vh,3.5rem)] transition-all duration-700 ease-out ${officesView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[12px]"}`}>
+                        <div className="w-[32px] h-[1px] bg-[#C8102E]/50 shrink-0" />
+                        <span className="font-['Libre_Baskerville',serif] text-[0.6rem] tracking-[0.2em] uppercase text-[#F7F5F0]/25">
+                            Offices
+                        </span>
+                        <div className="flex-1 h-[1px] bg-[#F7F5F0]/[0.06]" />
+                    </div>
+
+                    {/* 3-column office cards */}
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-[1px] bg-[#F7F5F0]/[0.07] rounded-[2px] overflow-hidden">
+                        {OFFICES.map((office, i) => (
+                            <div
+                                key={office.city}
+                                className={`bg-[#080806] px-[clamp(1.5rem,3vw,2.5rem)] py-[clamp(1.8rem,4vh,2.8rem)] flex flex-col gap-[1.2rem] group hover:bg-[#0f0f0c] transition-colors duration-300 ${officesView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[20px]"}`}
+                                style={{ transitionDelay: `${120 + i * 130}ms`, transitionDuration: "700ms", transitionTimingFunction: "ease-out" }}
+                            >
+                                {/* City name */}
+                                <div className="flex items-baseline justify-between">
+                                    <span className="font-['Bebas_Neue',sans-serif] text-[clamp(1.6rem,4vw,2.4rem)] tracking-[0.04em] text-[#F7F5F0]/80 leading-none group-hover:text-[#F7F5F0] transition-colors duration-300">
+                                        {office.city}
+                                    </span>
+                                    {/* City index number */}
+                                    <span className="font-['Libre_Baskerville',serif] text-[0.55rem] tracking-[0.14em] text-[#C8102E]/50 tabular-nums">
+                                        0{i + 1}
+                                    </span>
+                                </div>
+
+                                {/* Thin red rule */}
+                                <div className="w-[28px] h-[1px] bg-[#C8102E]/40 group-hover:w-[44px] group-hover:bg-[#C8102E]/70 transition-all duration-400 ease-out" />
+
+                                {/* Address lines */}
+                                <address className="not-italic flex flex-col gap-[0.3rem]">
+                                    {office.lines.map((line, j) => (
+                                        <span
+                                            key={j}
+                                            className="font-['DM_Serif_Display',serif] italic text-[clamp(0.82rem,1.4vw,1rem)] text-[#F7F5F0]/42 leading-[1.55] group-hover:text-[#F7F5F0]/60 transition-colors duration-300"
+                                        >
+                                            {line}
+                                        </span>
+                                    ))}
+                                </address>
+
+                                {/* Pincode badge */}
+                                <div className="mt-auto pt-[0.8rem] border-t border-[#F7F5F0]/[0.06]">
+                                    <span className="font-['Libre_Baskerville',serif] text-[0.6rem] tracking-[0.16em] text-[#F7F5F0]/18">
+                                        PIN — {office.pincode}
+                                    </span>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -160,7 +268,7 @@ export default function ContactFooterSection() {
                             { label: "Mentorship", href: "#mentorship" },
                             { label: "Gallery", href: "#gallery" },
                             { label: "Contact", href: "#contact" }
-                        ].map((link, i) => (
+                        ].map((link) => (
                             <a
                                 key={link.label}
                                 href={link.href}

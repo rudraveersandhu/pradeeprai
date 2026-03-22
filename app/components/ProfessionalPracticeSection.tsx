@@ -142,9 +142,9 @@ export default function ProfessionalPracticeSection() {
                                        STATS
                     ══════════════════════════════════════ */}
 
-                    <div className={`mt-[3rem] grid grid-cols-2 md:grid-cols-4 border-t border-[#0c0c0a]/[0.10] transition-all duration-700 delay-[280ms] ease-out ${statsView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[22px]"}`}>
+                    <div ref={statsView.ref} className={`mt-[3rem] grid grid-cols-2 md:grid-cols-4 border-t border-[#0c0c0a]/[0.10] transition-all duration-700 delay-[280ms] ease-out ${statsView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[22px]"}`}>
                         {STATS.map((s, i) => {
-                            const [num, suffix] = s.value.match(/^(\d+)([+%]?)$/)?.slice(1) ?? [s.value, ""];
+                            const [num, suffix] = s.value.match(/^([\dKk]+)([+%]?)$/)?.slice(1) ?? [s.value, ""];
                             return (
                                 <div
                                     key={s.label}
