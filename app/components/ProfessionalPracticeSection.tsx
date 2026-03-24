@@ -22,7 +22,7 @@ const STATS = [
     { value: "30K+", label: "Legal Professionals Mentored" },
     { value: "25+", label: "Years of Practice" },
     { value: "20+", label: "Domains of law" },
-    { value: "94%", label: "Success Rate" },
+    { value: "70k+", label: "Legal Aid Matters Handled" },
 ];
 
 

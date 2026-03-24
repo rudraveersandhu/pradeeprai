@@ -25,24 +25,18 @@ const TABS = [
 
 const GALLERY_IMAGES = {
     tab1: [
-        "https://picsum.photos/seed/t1_1/800/600",
-        "https://picsum.photos/seed/t1_2/600/800",
-        "https://picsum.photos/seed/t1_3/800/800",
-        "https://picsum.photos/seed/t1_4/1200/800",
-        "https://picsum.photos/seed/t1_5/1200/800",
-        "https://picsum.photos/seed/t1_6/1200/800",
-        "https://picsum.photos/seed/t1_7/800/600",
-        "https://picsum.photos/seed/t1_8/800/800",
+        "/gallery/events/a.jpg",
+        "/gallery/events/b.jpeg",
+        "/gallery/events/c.jpg",
     ],
     tab2: [
-        "https://picsum.photos/seed/t2_1/800/800",
-        "https://picsum.photos/seed/t2_2/1200/800",
-        "https://picsum.photos/seed/t2_3/600/800",
-        "https://picsum.photos/seed/t2_4/800/600",
-        "https://picsum.photos/seed/t2_5/800/600",
-        "https://picsum.photos/seed/t2_6/800/600",
-        "https://picsum.photos/seed/t2_7/1200/800",
-        "https://picsum.photos/seed/t2_8/800/800",
+        "/gallery/appearance/1.jpg",
+        "/gallery/appearance/2.png",
+        "/gallery/appearance/3.png",
+        "/gallery/appearance/4.png",
+        "/gallery/appearance/5.png",
+        "/gallery/appearance/6.png",
+        "/gallery/appearance/7.png",
     ],
 };
 
@@ -51,7 +45,7 @@ const ITEMS_PER_PAGE = 4;
 export default function GallerySection() {
     const headView = useInView(0.1);
     const bodyView = useInView(0.08);
-    
+
     const [activeTab, setActiveTab] = useState(TABS[0].id);
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -116,16 +110,15 @@ export default function GallerySection() {
                     <em className="font-['DM_Serif_Display',serif] not-italic italic text-[#C8102E]">Chronicles</em>
                 </h2>
             </div>
-            
+
             {/* Tabs */}
             <div className={`mb-[clamp(2rem,5vh,4rem)] flex gap-8 border-b border-[#0c0c0a]/[0.12] pb-4 transition-all duration-700 delay-200 relative z-10 ${headView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[20px]"}`}>
                 {TABS.map((tab) => (
                     <button
                         key={tab.id}
                         onClick={() => setActiveTab(tab.id)}
-                        className={`relative font-['Bebas_Neue',sans-serif] text-[clamp(1.2rem,2vw,1.5rem)] tracking-[0.05em] uppercase transition-colors duration-300 ${
-                            activeTab === tab.id ? "text-[#C8102E]" : "text-[#080806]/40 hover:text-[#080806]"
-                        }`}
+                        className={`relative font-['Bebas_Neue',sans-serif] text-[clamp(1.2rem,2vw,1.5rem)] tracking-[0.05em] uppercase transition-colors duration-300 ${activeTab === tab.id ? "text-[#C8102E]" : "text-[#080806]/40 hover:text-[#080806]"
+                            }`}
                     >
                         {tab.label}
                         {activeTab === tab.id && (
@@ -139,8 +132,8 @@ export default function GallerySection() {
             <div ref={bodyView.ref} className="relative z-10">
                 <div className={`grid grid-cols-1 md:grid-cols-2 gap-[clamp(1rem,3vw,2rem)] transition-all duration-700 delay-[300ms] ease-out ${bodyView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[20px]"}`}>
                     {currentImages.map((src, idx) => (
-                        <div 
-                            key={`${activeTab}-${currentPage}-${idx}`} 
+                        <div
+                            key={`${activeTab}-${currentPage}-${idx}`}
                             className="group relative w-full h-[clamp(300px,40vh,500px)] overflow-hidden bg-[#0c0c0a]/[0.05] shadow-sm transform transition-transform duration-500 hover:-translate-y-2 cursor-pointer"
                             onClick={() => setSelectedImage(src)}
                         >
@@ -166,16 +159,15 @@ export default function GallerySection() {
                 {/* Pagination Bottom Bar */}
                 {totalPages > 1 && (
                     <div className="mt-[clamp(3rem,6vh,5rem)] flex justify-center items-center gap-[clamp(1rem,3vw,3rem)] border-t border-[#0c0c0a]/[0.08] pt-8">
-                        <button 
+                        <button
                             onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                             disabled={currentPage === 1}
-                            className={`font-['Bebas_Neue',sans-serif] text-[1.2rem] tracking-[0.1em] transition-all duration-300 ${
-                                currentPage === 1 ? "text-[#080806]/30 cursor-not-allowed" : "text-[#080806] hover:text-[#C8102E]"
-                            }`}
+                            className={`font-['Bebas_Neue',sans-serif] text-[1.2rem] tracking-[0.1em] transition-all duration-300 ${currentPage === 1 ? "text-[#080806]/30 cursor-not-allowed" : "text-[#080806] hover:text-[#C8102E]"
+                                }`}
                         >
                             PREV
                         </button>
-                        
+
                         <div className="flex gap-4">
                             {Array.from({ length: totalPages }).map((_, i) => (
                                 <button
@@ -194,12 +186,11 @@ export default function GallerySection() {
                             ))}
                         </div>
 
-                        <button 
+                        <button
                             onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                             disabled={currentPage === totalPages}
-                            className={`font-['Bebas_Neue',sans-serif] text-[1.2rem] tracking-[0.1em] transition-all duration-300 ${
-                                currentPage === totalPages ? "text-[#080806]/30 cursor-not-allowed" : "text-[#080806] hover:text-[#C8102E]"
-                            }`}
+                            className={`font-['Bebas_Neue',sans-serif] text-[1.2rem] tracking-[0.1em] transition-all duration-300 ${currentPage === totalPages ? "text-[#080806]/30 cursor-not-allowed" : "text-[#080806] hover:text-[#C8102E]"
+                                }`}
                         >
                             NEXT
                         </button>
@@ -208,34 +199,33 @@ export default function GallerySection() {
             </div>
 
             {/* Lightbox Overlay */}
-            <div 
-                className={`fixed inset-0 z-[100] bg-[#0c0c0a]/98 backdrop-blur p-[clamp(1rem,4vw,3rem)] flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                    selectedImage ? "opacity-100 pointer-events-auto visibility-visible" : "opacity-0 pointer-events-none visibility-hidden"
-                }`}
+            <div
+                className={`fixed inset-0 z-[100] bg-[#0c0c0a]/98 backdrop-blur p-[clamp(1rem,4vw,3rem)] flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${selectedImage ? "opacity-100 pointer-events-auto visibility-visible" : "opacity-0 pointer-events-none visibility-hidden"
+                    }`}
                 onClick={() => setSelectedImage(null)}
             >
                 {/* Close Button */}
-                <button 
+                <button
                     className="absolute top-[clamp(1.5rem,4vw,3rem)] right-[clamp(1.5rem,4vw,3rem)] text-[#F7F5F0] font-['Bebas_Neue',sans-serif] text-2xl tracking-[0.15em] hover:text-[#C8102E] transition-colors z-[110] flex items-center gap-2"
                     onClick={(e) => { e.stopPropagation(); setSelectedImage(null); }}
                 >
                     CLOSE
                     <div className="w-[30px] h-[1px] bg-current" />
                 </button>
-                
+
                 {selectedImage && (
                     <div className="relative max-w-7xl w-full h-full flex justify-center items-center">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img 
-                            src={selectedImage} 
-                            alt="Fullscreen view" 
+                        <img
+                            src={selectedImage}
+                            alt="Fullscreen view"
                             className="max-w-full max-h-full object-contain shadow-2xl animate-[scaleIn_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]"
                             onClick={(e) => e.stopPropagation()} // Prevent click from closing
                         />
                     </div>
                 )}
             </div>
-            
+
             {/* Custom Animation Keyframes for Lightbox Image */}
             <style jsx global>{`
                 @keyframes scaleIn {
