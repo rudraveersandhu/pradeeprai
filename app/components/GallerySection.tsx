@@ -19,24 +19,38 @@ function useInView(threshold = 0.2) {
 }
 
 const TABS = [
-    { id: "tab1", label: "Engagements & Events" },
-    { id: "tab2", label: "Media & Appearances" },
+    { id: "tab1", label: "Media and Events " },
+    { id: "tab2", label: "Mentorship and Engagements" },
 ];
 
 const GALLERY_IMAGES = {
     tab1: [
         "/gallery/events/a.jpg",
-        "/gallery/events/b.jpeg",
-        "/gallery/events/c.jpg",
+        "/gallery/events/b.jpg",
+        "/gallery/events/c.jpeg",
+        "/gallery/events/d.jpg",
+        "/gallery/events/e.jpg",
+        "/gallery/events/f.jpg",
+        "/gallery/events/g.jpg",
+        "/gallery/events/h.jpg",
+        "/gallery/events/i.jpg",
+        "/gallery/events/j.jpg",
+        "/gallery/events/k.jpg",
+        "/gallery/events/l.jpg",
+        "/gallery/events/m.jpg",
+        "/gallery/events/n.jpg",
+        "/gallery/events/o.jpg",
+        "/gallery/events/p.jpg",
+        "/gallery/events/q.jpg",
     ],
     tab2: [
-        "/gallery/appearance/1.jpg",
-        "/gallery/appearance/2.png",
-        "/gallery/appearance/3.png",
-        "/gallery/appearance/4.png",
-        "/gallery/appearance/5.png",
-        "/gallery/appearance/6.png",
-        "/gallery/appearance/7.png",
+        "/gallery/appearance/a.jpg",
+        "/gallery/appearance/b.png",
+        "/gallery/appearance/c.png",
+        "/gallery/appearance/d.png",
+        "/gallery/appearance/e.png",
+        "/gallery/appearance/f.png",
+        "/gallery/appearance/g.png",
     ],
 };
 
