@@ -40,6 +40,31 @@ const INITIATIVES = [
         body: "Dr. Rai has addressed academic institutions and professional forums on issues relating to constitutional law, governance, and public policy — contributing to structured dialogue between the Bar, the Bench, academia, and policy institutions.",
         tag: "Discourse & Dialogue",
     },
+    {
+        id: "04",
+        title: "Supreme Court Bar Association (SCBA)",
+        subtitle: "Institutional Governance & Welfare",
+        body: "Dr. Pradeep Rai served as Vice-President of the Supreme Court Bar Association for two consecutive terms (2020–2021 and 2021–2022). During his tenure, he founded and chaired key sub-committees, including the Grievance Redressal Committee, E-Committee, Health Committee, Housing Committee, Bar Coordination Committee, and Cultural Committee.\n" +
+            "\n" +
+            "His contributions also include organising seminars, educational programmes, and discussions on prison reform, alongside broader efforts to strengthen professional competence, training, and welfare within the Bar.",
+        tag: "Documentation & Commentary",
+    },
+    {
+        id: "05",
+        title: "India Society of International Law (ISIL)",
+        subtitle: "Academic & Policy Contributions",
+        body: "Dr. Rai currently serves as the elected Vice-President of the India Society of International Law (ISIL), where he contributes to academic engagement, international law discourse, and public policy discussions.\n" +
+            "\n \n" +
+            "His role reflects continued involvement in institutional dialogue and knowledge-building at the intersection of law, governance, and global legal frameworks. ",
+        tag: "Research & Policy",
+    },
+    {
+        id: "06",
+        title: "National Anti-Doping Agency (NADA)",
+        subtitle: "Regulatory Leadership",
+        body: "Dr. Pradeep Rai served as Vice-Chairman of the National Anti-Doping Agency (NADA), functioning under the Ministry of Youth Affairs and Sports. In this role, he was involved in overseeing and monitoring anti-doping measures in Indian sports, contributing to regulatory compliance, institutional oversight, and the promotion of integrity within competitive athletics.",
+        tag: "Discourse & Dialogue",
+    },
 ];
 
 const PILLARS = ["The Bar", "Academia", "Policy Institutions", "Judicial Process"];
