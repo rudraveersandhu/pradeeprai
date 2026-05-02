@@ -107,18 +107,28 @@ export default function HeroSection() {
 
                 {/* Photo Overlay logic (Gradients converted to standard absolute divs) */}
                 <div className="absolute inset-0 w-full h-full pointer-events-none z-[1]">
+                    {/* Desktop Image */}
                     <Image
                         src="/prbf.jpg"
                         alt="Pradeep Rai, Senior Advocate"
                         fill
-                        className={`object-cover object-top transition-all duration-[1500ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-105"
+                        className={`hidden md:block object-cover object-top transition-all duration-[1500ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-105"
                             }`}
+                        priority
+                    />
+                    {/* Mobile Image */}
+                    <Image
+                        src="/prbf_mob.jpg"
+                        alt="Pradeep Rai, Senior Advocate"
+                        fill
+                        className={`md:block hidden object-cover object-top transition-all duration-[1500ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${isLoaded ? "opacity-100 scale-100" : "opacity-0 scale-105"
+                            }`.replace("md:block hidden", "block md:hidden")}
                         priority
                     />
                     {/* Left-side gradient: photo fades seamlessly into black */}
                     {/*<div className="absolute inset-0 z-[2] max-md:bg-[linear-gradient(to_right,#080806_0%,rgba(8,8,6,0.82)_100%)] md:bg-[linear-gradient(to_right,#080806_0%,rgba(8,8,6,0.6)_32%,rgba(8,8,6,0.15)_58%,transparent_75%)]" />*/}
                     {/* Bottom vignette */}
-                    <div className="absolute inset-0 z-[2] bg-[linear-gradient(to_top,#080806_0%,transparent_30%)]" />
+                    <div className="absolute inset-0 z-[2] bg-[linear-gradient(to_top,#080806_0%,rgba(8,8,6,0.95)_35%,rgba(8,8,6,0.6)_60%,transparent_85%)] md:bg-[linear-gradient(to_top,#080806_0%,transparent_30%)]" />
                 </div>
 
                 {/* Left content col */}
