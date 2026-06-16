@@ -66,7 +66,7 @@ export default function ProfessionalPracticeSection() {
                 <div className="md:col-span-9 md:border-l border-[#0c0c0a]/[0.12] md:pl-[clamp(2rem,4vw,4rem)] flex flex-col gap-[2rem]">
                     <div className={`space-y-[1.4rem] transition-all duration-700 delay-[120ms] ease-out ${overviewView.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[16px]"}`}>
                         <p className="font-['Libre_Baskerville',serif] text-[clamp(0.85rem,1.4vw,1rem)] leading-[1.85] text-[#6B6760]">
-                            Dr. Pradeep Rai is a Designated Senior Advocate practising before the Supreme Court of India and constitutional courts across the country. His work engages constitutional interpretation, statutory construction, regulatory systems, commercial disputes, and institutional governance.</p>
+                            Dr. Pradeep Rai is a Senior Advocate practising before the Supreme Court of India and constitutional courts across the country. His work engages constitutional interpretation, statutory construction, regulatory systems, commercial disputes, and institutional governance.</p>
                         <p className="font-['Libre_Baskerville',serif] text-[clamp(0.85rem,1.4vw,1rem)] leading-[1.85] text-[#6B6760]">
                             Alongside active litigation, he has been associated with initiatives contributing to legal scholarship, structured research, and public discourse on questions of law and policy.
                         </p>
