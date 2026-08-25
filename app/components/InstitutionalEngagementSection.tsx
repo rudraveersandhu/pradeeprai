@@ -44,7 +44,7 @@ const INITIATIVES = [
         id: "04",
         title: "Supreme Court Bar Association (SCBA)",
         subtitle: "Institutional Governance & Welfare",
-        body: "Dr. Pradeep Rai served as Vice-President of the Supreme Court Bar Association for two consecutive terms (2020–2021 and 2021–2022). During his tenure, he founded and chaired key sub-committees, including the Grievance Redressal Committee, E-Committee, Health Committee, Housing Committee, Bar Coordination Committee, and Cultural Committee.\n" +
+        body: "Dr. Pradeep Rai is currently serving as the President of the Supreme Court Bar Association (2026-2027) and has previously served as Vice-President for two consecutive terms (2020-2021 and 2021 to 2022). During his tenure, he founded and chaired key sub-committees, including the Grievance Redressal Committee, E-Committee, Health Committee, Housing Committee, Bar Coordination Committee, and Cultural Committee.\n" +
             "\n" +
             "His contributions also include organising seminars, educational programmes, and discussions on prison reform, alongside broader efforts to strengthen professional competence, training, and welfare within the Bar.",
         tag: "Documentation & Commentary",
