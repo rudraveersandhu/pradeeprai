@@ -168,7 +168,7 @@ export default function HeroSection() {
                 <div className={`relative z-10 flex items-end justify-between gap-[2rem] flex-wrap pt-[clamp(1.4rem,3vh,2.4rem)] px-[clamp(1.5rem,6vw,5.5rem)] pb-0 border-t border-[#F7F5F0]/10 mt-[clamp(1.5rem,3vh,2.5rem)] transition-all duration-800 delay-[680ms] ease-out ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-[18px]"}`}>
                     <div>
                         <span className="font-['Libre_Baskerville',serif] font-bold text-[clamp(0.68rem,1.1vw,0.82rem)] tracking-[0.12em] uppercase text-[#F7F5F0]/55 block mb-[0.35rem]">
-                            Senior Advocate
+                            President, Supreme Court Bar Association.
                         </span>
                         <span className="font-['DM_Serif_Display',serif] italic text-[clamp(0.95rem,1.8vw,1.22rem)] text-[#F7F5F0]/45 leading-[1.45] block">
                             Engaged in constitutional adjudication, regulatory frameworks,<br />
